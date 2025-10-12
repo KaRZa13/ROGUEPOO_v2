@@ -1,5 +1,3 @@
-import os
-
 RARITY_LEVELS = {
     "Common" : "white",
     "Uncommon" : "green4",
@@ -8,9 +6,3 @@ RARITY_LEVELS = {
     "Legendary" : "yellow1",
     "Mythic" :  "red1",
 }
-
-
-class Utils:
-    @staticmethod
-    def clear_bash():
-        os.system("cls")
