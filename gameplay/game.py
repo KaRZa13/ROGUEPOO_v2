@@ -1,10 +1,10 @@
 from time import sleep
-from ..utils.utils import Utils
-from ..data.assets.ascii.ascii_title import AsciiTitles
-from ..data.assets.dialogs import Dialogs
-from ..entities.classes.warrior import Warrior
-from ..entities.classes.mage import Mage
-from ..entities.classes.rogue import Rogue
+from utils.utils import Utils
+from data.assets.ascii.ascii_titles import AsciiTitles
+from data.assets.dialogs import Dialogs
+from entities.classes.warrior import Warrior
+from entities.classes.mage import Mage
+from entities.classes.rogue import Rogue
 
 class Game:
     def __init__(self):
@@ -12,31 +12,31 @@ class Game:
         self.__current_menu = None
 
     @property
-    def player(self):
+    def get_player(self):
         return self.__player
 
     @property
-    def current_menu(self):
+    def get_current_menu(self):
         return self.__current_menu
 
-    @player.setter
+    @get_player.setter
     def player(self, value):
         self.__player = value
 
-    @current_menu.setter
-    def current_menu(self, value):
+    @get_current_menu.setter
+    def set_current_menu(self, value):
         self.__current_menu = value
 
     def match_menu(self, choice):
         match choice:
             case 1:
-                self.current_menu('village')
+                self.set_current_menu('village')
             case 2:
-                self.current_menu('dungeon')
+                self.set_current_menu('dungeon')
             case 3:
-                self.current_menu('cave')
+                self.set_current_menu('cave')
             case 4:
-                self.current_menu('shop')
+                self.set_current_menu('shop')
             case _:
                 Utils.wrong_entry()
                 sleep(3)
@@ -45,11 +45,23 @@ class Game:
     def match_shop_menu(self, choice):
         pass
 
-    def display_hud(self, current_menu):
+    def display_context_menu(self, context_menu):
         Utils.clear_bash()
         AsciiTitles.main_title()
-        
-
+        match context_menu:
+            case 'village':
+                AsciiTitles.village_title()
+            case 'inventory':
+                AsciiTitles.inventory_title()
+            case 'dungeon':
+                AsciiTitles.dungeon_title()
+            case 'cave':
+                AsciiTitles.cave_title()
+            case 'shop':
+                AsciiTitles.shop_title()
+            case _:
+                pass
+        Dialogs.hud(self.player)
 
     def start(self):
         Utils.clear_bash()
@@ -81,19 +93,17 @@ class Game:
                 Utils.wrong_entry()
                 sleep(3)
                 return self.create_character()
+        self.set_current_menu('village')
         return self.main_menu()
 
     def main_menu(self):
-        Utils.clear_bash()
-        AsciiTitles.main_title()
-        # ASCII village title
-        Dialogs.hud(self.player)
+        self.display_context_menu(self.__current_menu)
         Dialogs.main_menu()
         choice = int(input("Your choice : "))
         match choice:
             case 1:
-                # inventaire
-                pass
+                self.set_current_menu('inventory')
+                return self.inventory_menu()
             case 2:
                 pass
             case 3:
@@ -104,3 +114,8 @@ class Game:
                 Utils.wrong_entry()
                 sleep(3)
                 return self.main_menu()
+            
+
+    def inventory_menu(self):
+        self.display_context_menu(self.__current_menu)
+        

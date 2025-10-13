@@ -1,4 +1,4 @@
-from ..player import Player
+from entities.player import Player
 
 class Warrior(Player):
     def __init__(self, name, max_hp, armor):

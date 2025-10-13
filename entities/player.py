@@ -1,4 +1,4 @@
-from ..gameplay.inventory import Inventory
+from gameplay.inventory import Inventory
 
 class Player:
     def __init__(self, name, max_hp):

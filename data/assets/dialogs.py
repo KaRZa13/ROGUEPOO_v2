@@ -16,7 +16,7 @@ class Dialogs:
 
     @staticmethod
     def hud(player):
-        pprint(f'[{player.color}]{player.name}[/{player.color}] : {player.hp}/{player.max_hp} ❤️ - {player.gold} 🪙 \n \n ')
+        pprint(f'[{player.color}]{player.name}[/{player.color}] : {player.current_hp}/{player.max_hp} ❤️ - {player.gold} 🪙 \n \n ')
 
     @staticmethod
     def main_menu():
