@@ -58,46 +58,32 @@ class Game:
         return self.main_menu()
 
     def main_menu(self):
-        self.display_context_menu(self.current_menu)
-        Dialogs.main_menu()
-        choice = int(input("Your choice : "))
+        options = [
+            ("New adventure", "dark_green"),
+            ("See the inventory", "dark_red"),
+            ("Go to shop", "blue3"),
+            ("Save and quit", "grey66")
+        ]
+
+        hud = self.dialogs["hud"].format(player=self.player)
+        choice = self.menu_handler.select_option(options, self.dialogs["main_menu"], hud, self.current_menu)
         match choice:
-            case 1:
+            case 0:
                 self.new_adventure()
-            case 2:
+            case 1:
                 self.current_menu ='inventory'
                 return self.inventory_menu()
-            case 3:
+            case 2:
                 self.current_menu = 'shop'
                 return self.shop_menu()
-            case 4:
+            case 3:
                 # TODO Save the game
                 AsciiTitles.bye()
                 sleep(3)
                 Utils.clear_bash()
                 quit()
             case _:
-                Utils.wrong_entry()
-                sleep(3)
-                return self.main_menu()
-
-    def match_menu(self, choice):
-        match choice:
-            case 1:
-                self.current_menu = 'village'
-            case 2:
-                self.current_menu = 'dungeon'
-            case 3:
-                self.current_menu = 'cave'
-            case 4:
-                self.current_menu = 'shop'
-            case _:
-                Utils.wrong_entry()
-                sleep(3)
-                return self.main_menu()
-
-    def match_shop_menu(self, choice):
-        pass
+                quit()
 
     def display_context_menu(self, context_menu):
         AsciiTitles.main_title()
@@ -120,7 +106,30 @@ class Game:
         self.display_context_menu(self.__current_menu)
 
     def shop_menu(self):
-        self.display_context_menu(self.__current_menu)
+        options = [
+            ("Swords", "dark_red"),
+            ("Staffs", "blue3"),
+            ("Daggers", "dark_green"),
+            ("Shields", "dark_magenta"),
+            ("Helmets", "purple4"),
+            ("Chestplates", "purple4"),
+            ("Leggings", "purple4"),
+            ("Boots", "purple4"),
+            ("Potions", "bright_green"),
+            ("Back to village", "grey66")
+        ]
+
+        hud = self.dialogs["hud"].format(player=self.player)
+        choice = self.menu_handler.select_option(options, self.dialogs["shop_menu"], hud, self.current_menu)
+
+        match choice:
+            case 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8:
+                pass
+            case 9:
+                self.current_menu = 'village'
+                return self.main_menu()
+            case _:
+                quit()
 
     def new_adventure(self):
         pass

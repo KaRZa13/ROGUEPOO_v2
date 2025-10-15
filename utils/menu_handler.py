@@ -24,28 +24,22 @@ class MenuHandler:
                 pass
         # Dialogs.hud(self.player)
 
-    def select_option(self, options, title=None, context_menu=None):
-        """
-        Affiche un menu avec navigation au clavier
-        Args:
-            options: Liste de tuples (label, color)
-                    ex: [("Warrior", "dark_red"), ("Mage", "blue3")]
-            title: Titre du menu
-        Returns:
-            Index de l'option sélectionnée (commence à 0)
-        """
-
+    def select_option(self, options, title=None, hud=None, context_menu=None):
         selected = 0
 
         with self.term.cbreak(), self.term.hidden_cursor():
             while True:
                 print(self.term.home + self.term.clear, end='')
                 self.display_context_menu(context_menu)
-                print(f"\n{title}\n")
+                
+                if hud:
+                    rprint(f'{hud}')
+                if title:
+                    rprint(f'{title}')
                 
                 # Afficher les options
-                for i, (label, color) in enumerate(options):
-                    if i == selected:
+                for j, (label, color) in enumerate(options):
+                    if j == selected:
                         # Option sélectionnée avec un curseur
                         rprint(f"  → [{color}]{label}[/{color}]")
                     else:

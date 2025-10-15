@@ -4,12 +4,12 @@ class AsciiTitles:
 
     @staticmethod
     def main_title():
-        print(r"""[red]
+        print(r"""[blue_violet]
     ▄▄▄         ▄▄ • ▄• ▄▌▄▄▄ . ▄▄▄·                ▌ ▐··▄▄▄▄•
     ▀▄ █·▪     ▐█ ▀ ▪█▪██▌▀▄.▀·▐█ ▄█▪     ▪        ▪█·█▌▪▀·.█▌
     ▐▀▀▄  ▄█▀▄ ▄█ ▀█▄█▌▐█▌▐▀▀▪▄ ██▀· ▄█▀▄  ▄█▀▄    ▐█▐█•▄█▀▀▀•
     ▐█•█▌▐█▌.▐▌▐█▄▪▐█▐█▄█▌▐█▄▄▌▐█▪·•▐█▌.▐▌▐█▌.▐▌    ███ █▌▪▄█▀
-    .▀  ▀ ▀█▄▀▪·▀▀▀▀  ▀▀▀  ▀▀▀ .▀    ▀█▄▀▪ ▀█▄▀▪ ▀ . ▀  ·▀▀▀ •[/red]""")
+    .▀  ▀ ▀█▄▀▪·▀▀▀▀  ▀▀▀  ▀▀▀ .▀    ▀█▄▀▪ ▀█▄▀▪ ▀ . ▀  ·▀▀▀ •[/blue_violet]""")
 
     @staticmethod
     def village_title():
@@ -24,24 +24,24 @@ class AsciiTitles:
 
     @staticmethod
     def inventory_title():
-        print(r"""[blue_violet]
+        print(r"""[dark_red]
         ▄█    ▄       ▄   ▄███▄      ▄     ▄▄▄▄▀ ████▄ █▄▄▄▄ ▀▄    ▄
         ██     █       █  █▀   ▀      █ ▀▀▀ █    █   █ █  ▄▀   █  █
         ██ ██   █ █     █ ██▄▄    ██   █    █    █   █ █▀▀▌     ▀█
         ▐█ █ █  █  █    █ █▄   ▄▀ █ █  █   █     ▀████ █  █     █
          ▐ █  █ █   █  █  ▀███▀   █  █ █  ▀              █    ▄▀
            █   ██    █▐           █   ██                ▀
-                     ▐[/blue_violet]""")
+                     ▐[/dark_red]""")
 
     @staticmethod
     def shop_title():
-        print(r"""[blue]
+        print(r"""[blue3]
            ▄▄▄▄▄    ▄  █ ████▄ █ ▄▄
           █     ▀▄ █   █ █   █ █   █
         ▄  ▀▀▀▀▄   ██▀▀█ █   █ █▀▀▀
          ▀▄▄▄▄▀    █   █ ▀████ █
                       █         █
-                     ▀           ▀[/blue]""")
+                     ▀           ▀[/blue3]""")
 
     @staticmethod
     def dungeon_title():

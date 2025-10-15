@@ -1,5 +1,7 @@
 {
-    "new_game": "\n\nHi adventurer ! It's been a while ! \nWhat do you want to do ?",
+    "new_game": "\n\nHi adventurer ! It's been a while ! \nWhat do you want to do ?\n",
     "choose_class": "\n Choose your class : \n",
-    "hud": "\n[{player.color}]{player.name}[/{player.color}] : {player.current_hp}/{player.max_hp} ❤️ - {player.gold} 🪙\n\n"
+    "hud": "\n[{player.color}]{player.name}[/{player.color}] : {player.current_hp}/{player.max_hp} ❤️ - {player.gold} 🪙\n",
+    "main_menu": "Where do you want to go ? : \n",
+    "shop_menu": "Welcome to my shop ! What do you want to buy ?\n"
 }
