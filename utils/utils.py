@@ -1,5 +1,5 @@
 import os
-from rich.pretty import pprint
+from rich import print as pprint
 
 class Utils:
     @staticmethod
