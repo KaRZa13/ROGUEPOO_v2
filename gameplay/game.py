@@ -1,5 +1,7 @@
 import json
 from time import sleep
+
+# Classes
 from utils.utils import Utils
 from utils.menu_handler import MenuHandler
 from data.assets.ascii.ascii_titles import AsciiTitles
@@ -8,11 +10,14 @@ from entities.classes.warrior import Warrior
 from entities.classes.mage import Mage
 from entities.classes.rogue import Rogue
 
+# Constants
+from utils.config import RARITY_COLORS
+
 class Game:
-    def __init__(self) -> None:
-        self.__player: object = None
-        self.__current_menu: str = None
-        self.menu_handler: object = MenuHandler()
+    def __init__(self):
+        self.player = None
+        self.current_menu = None
+        self.menu_handler = MenuHandler()
 
         with open('data/assets/json/dialogs.json', 'r', encoding='utf-8') as f:
             self.dialogs = json.load(f)
@@ -124,30 +129,16 @@ class Game:
 
         match choice:
             case 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8:
-                pass
+                self.shop_section(choice)
             case 9:
                 self.current_menu = 'village'
                 return self.main_menu()
             case _:
                 quit()
 
-    def new_adventure(self):
+    def shop_section(self, section):
         pass
 
-    # region Getters and Setters
-    @property
-    def player(self):
-        return self.__player
 
-    @property
-    def current_menu(self):
-        return self.__current_menu
-
-    @player.setter
-    def player(self, value):
-        self.__player = value
-
-    @current_menu.setter
-    def current_menu(self, value):
-        self.__current_menu = value
-    # endregion
+    def new_adventure(self):
+        pass

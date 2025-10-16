@@ -3,5 +3,6 @@
     "choose_class": "\n Choose your class : \n",
     "hud": "\n[{player.color}]{player.name}[/{player.color}] : {player.current_hp}/{player.max_hp} ❤️ - {player.gold} 🪙\n",
     "main_menu": "Where do you want to go ? : \n",
-    "shop_menu": "Welcome to my shop ! What do you want to buy ?\n"
+    "shop_menu": "Welcome to my shop ! What do you want to buy ?\n",
+    "new_adventure": "\nChoose your destination : \n"
 }

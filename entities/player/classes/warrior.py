@@ -1,4 +1,4 @@
-from entities.player import Player
+from entities.player.player import Player
 
 class Warrior(Player):
     def __init__(self, name: str, max_hp: int, armor: int) -> None:
