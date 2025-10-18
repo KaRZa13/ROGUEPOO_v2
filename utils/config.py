@@ -1,4 +1,4 @@
-RARITY_LEVELS = {
+RARITY_COLORS = {
     "Common" : "white",
     "Uncommon" : "green4",
     "Rare" : "blue1",

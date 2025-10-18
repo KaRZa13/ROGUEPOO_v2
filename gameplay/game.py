@@ -6,9 +6,9 @@ from utils.utils import Utils
 from utils.menu_handler import MenuHandler
 from data.assets.ascii.ascii_titles import AsciiTitles
 from data.assets.dialogs_legacy import Dialogs
-from entities.classes.warrior import Warrior
-from entities.classes.mage import Mage
-from entities.classes.rogue import Rogue
+from entities.player.classes.warrior import Warrior
+from entities.player.classes.mage import Mage
+from entities.player.classes.rogue import Rogue
 
 # Constants
 from utils.config import RARITY_COLORS

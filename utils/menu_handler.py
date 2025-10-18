@@ -1,7 +1,6 @@
 from blessed import Terminal
 from rich import print as rprint
 from data.assets.ascii.ascii_titles import AsciiTitles
-from data.assets.dialogs_legacy import Dialogs
 
 class MenuHandler:
     def __init__(self):
@@ -22,7 +21,6 @@ class MenuHandler:
                 AsciiTitles.shop_title()
             case _:
                 pass
-        # Dialogs.hud(self.player)
 
     def select_option(self, options, title=None, hud=None, context_menu=None):
         selected = 0
@@ -40,14 +38,14 @@ class MenuHandler:
                 # Afficher les options
                 for j, (label, color) in enumerate(options):
                     if j == selected:
-                        # Option sélectionnée avec un curseur
+                        # Option sélectionnée avec curseur
                         rprint(f"  → [{color}]{label}[/{color}]")
                     else:
                         rprint(f"    [{color}]{label}[/{color}]")
                 
                 rprint("\n[dim]↑/↓: Navigate | Enter: Select | Q: Quit[/dim]")
                 
-                # Capturer l'input
+                # input
                 key = self.term.inkey()
                 
                 if key.name == 'KEY_UP':
